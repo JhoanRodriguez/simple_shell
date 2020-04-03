@@ -8,5 +8,5 @@
 #include <sys/wait.h>
 #include <errno.h>
 
-char get_line();
+char *get_line();
 #endif
