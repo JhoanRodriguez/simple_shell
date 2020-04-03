@@ -1,6 +1,6 @@
 #include "shell.h"
 
-void get_line()
+char get_line()
 {
 	char *line = NULL;//line to read
 	ssize_t n = 0;//var to malloc
