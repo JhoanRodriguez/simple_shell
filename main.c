@@ -61,5 +61,7 @@ int main()
 	line = get_line();
 	args = split_line(line);
 
+	free(line);
+	free(args);
 	return (0);
 }
