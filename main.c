@@ -10,8 +10,7 @@ char *get_line()
 	ssize_t nread;
 
 	nread = getline(&line, &n, stdin);
-	printf("Retrieved line of length %zu:\n", nread);
-	printf("%s\n", line);
+	printf("Caracteres leidos: %zu\n\n", nread); //debug
 	return (line);
 }
 
@@ -20,18 +19,35 @@ char *get_line()
  */
 char **split_line(char *line)
 {
-	int t_count = 0;
-	char *token = strtok(line, " ");
+	int buffer_size = 32;
+	int i;
+	char **tokens;
+	char *token;
 
-	while (token != NULL)
+	tokens = malloc(sizeof(char*) * buffer_size);
+	if (tokens == NULL)
+		exit(1);
+
+	printf("argumentos recibidos:\n"); //debug
+	token = strtok(line, " ");
+	for(i = 0; token != NULL; i++)
 	{
-		printf("%s\n", token);
+		tokens[i] = token;
+		printf("%s\n", tokens[i]); //debug
+		if (i >= buffer_size)
+		{
+			buffer_size += buffer_size;
+			tokens = realloc(tokens, sizeof(char*) * buffer_size);
+			if (tokens == NULL)
+				exit(1);
+		}
 		token = strtok(NULL, " ");
-		t_count++;
 	}
-	printf("Number of args: %d\n", t_count);
-	return (token);
+	tokens[i] = NULL;
+	printf("Numero de argumentos: %d\n", i); //debug
+	return (tokens);
 }
+
 
 /**
  * main - one function to rule then all
