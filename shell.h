@@ -7,4 +7,6 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <errno.h>
+char *get_line();
+char **split_line(char *line);
 #endif

@@ -1,25 +1,17 @@
 #include "shell.h"
-
+/**
+ * main - one function to rule then all
+ */
 int main()
 {
-	int out, quit = 0;
-	char *buffer;
-	size_t bufsize = 32;
+	char *line;
+	char **args;
 
-	buffer = malloc(sizeof(char)*bufsize);
-	if (!buffer)
-	{
-		perror("Unable to allocate buffer");
-		exit(1);
-	}
-	while (quit == 0)
-	{
-		printf("$ ");
-		out = getline(&buffer,&bufsize,stdin);
-		printf("%s\n",buffer);
-		if (strncmp(buffer,"exit",(out - 1)) == 0)
-			quit = 1;
-	}
-	free(buffer);
-	return(0);
+	printf("$ ");
+	line = get_line();
+	args = split_line(line);
+
+	free(line);
+	free(args);
+	return (0);
 }
