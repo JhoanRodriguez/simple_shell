@@ -1,5 +1,8 @@
 #include "shell.h"
 
+/**
+ * get_line - get a string from the stdin
+ */
 char *get_line()
 {
 	char *line = NULL;
@@ -12,6 +15,9 @@ char *get_line()
 	return (line);
 }
 
+/**
+ * split_line - split a line into diferent arguments
+ */
 char **split_line(char *line)
 {
 	int t_count = 0;
@@ -27,7 +33,9 @@ char **split_line(char *line)
 	return (token);
 }
 
-
+/**
+ * main - one function to rule then all
+ */
 int main()
 {
 	char *line;
