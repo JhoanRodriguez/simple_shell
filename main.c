@@ -9,7 +9,7 @@ int main()
 
 	while (1)
 	{
-		printf("$ ");
+		printf("~$ ");
 		line = get_line();
 		args = split_line(line);
 		free(line);
