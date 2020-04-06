@@ -13,7 +13,7 @@ char **split_line(char *line)
 	if (tokens == NULL)
 		exit(1);
 
-	token = strtok(line, " ");
+	token = strtok(line, " ,:");
 	for(i = 0; token != NULL; i++)
 	{
 		tokens[i] = token;
@@ -24,7 +24,7 @@ char **split_line(char *line)
 			if (tokens == NULL)
 				exit(1);
 		}
-		token = strtok(NULL, " ");
+		token = strtok(NULL, " ,:");
 	}
 	tokens[i] = NULL;
 	return (tokens);
