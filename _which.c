@@ -23,6 +23,8 @@ char *_which(char *command)
 	path = split_line(split);
 	while (path[x] != NULL)
 	{
+		printf("Esto es path %s\n", path[x]);
+		printf("Esto es command %s\n",command);
 		split = _strcat(path[x], command);
 		printf("Esto es split en el while %s\n", split);
 		if (_stat(split) == 0)
