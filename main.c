@@ -12,6 +12,7 @@ int main()
 		printf("~$ ");
 		line = get_line();
 		args = split_line(line);
+		_fork(args);
 		free(line);
 		free(args);
 	}

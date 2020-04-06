@@ -10,6 +10,5 @@ char *get_line()
 	ssize_t nread;
 
 	nread = getline(&line, &n, stdin);
-	printf("Caracteres leidos: %zu\n\n", nread); //debug
 	return (line);
 }

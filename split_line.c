@@ -13,12 +13,10 @@ char **split_line(char *line)
 	if (tokens == NULL)
 		exit(1);
 
-	printf("argumentos recibidos:\n"); //debug
 	token = strtok(line, " ");
 	for(i = 0; token != NULL; i++)
 	{
 		tokens[i] = token;
-		printf("%s\n", tokens[i]); //debug
 		if (i >= buffer_size)
 		{
 			buffer_size += buffer_size;
@@ -29,6 +27,5 @@ char **split_line(char *line)
 		token = strtok(NULL, " ");
 	}
 	tokens[i] = NULL;
-	printf("Numero de argumentos: %d\n", i); //debug
 	return (tokens);
 }

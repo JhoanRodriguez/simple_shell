@@ -4,7 +4,7 @@
  * @s: Number that is going to be splited
  * Return: Return the last digit
  */
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int c = 0;
 

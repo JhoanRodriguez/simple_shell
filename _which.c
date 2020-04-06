@@ -17,10 +17,13 @@ char *_which(char *command)
 		return (NULL);
 
 	tmp = _strdup(command);
+	printf ("Esto es tmp: %s\n", tmp);
 	command = _strdup("/");
+	printf ("Esto es command: %s\n", command);
 	_strcat(command, tmp);
+	printf ("Esto es command despue de strcat: %s\n", command);
 	split = _getenv("PATH");
-	path = _split_string(split);
+	path = split_line(split);
 	while (path[x] != NULL)
 	{
 		split = _strcat(path[x], command);

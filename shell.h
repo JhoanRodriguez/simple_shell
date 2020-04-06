@@ -6,8 +6,10 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
 #include <errno.h>
-int _strlen(char *s);
+extern char **environ;
+int _strlen(const char *s);
 char *_strcat(char *dest, char *src);
 char *_strdup(char *duplicate);
 char *get_line();
@@ -15,4 +17,5 @@ char **split_line(char *line);
 int _stat(const char *path);
 char *_getenv(const char *name);
 char *_which(char *command);
+int _fork(char **args);
 #endif
