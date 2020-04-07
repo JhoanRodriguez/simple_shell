@@ -15,15 +15,12 @@ int main()
 		line = get_line();
 		args = split_line(line);
 		if (strcmp(args[0], "exit") == 0)
-		{
 			quit = 1;
-		}
 		else
-		{
 			_fork(args);
-			free(line);
-			free(args);
-		}
+
+		free(line);
+		free(args);
 	}
 	return (0);
 }

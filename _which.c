@@ -7,25 +7,32 @@
  */
 char *_which(char *command)
 {
-	char **path;
-	char *split;
-	char *tmp;
-	int x;
+	char *aux, **path, *split;
+	int size, x = 0;
+
+	size = _strlen(command);
 
 	if (!command)
 		return (NULL);
 
-	tmp = _strdup(command);
-	command = _strdup("/");
-	_strcat(command, tmp);
 	split = _getenv("PATH");
 	path = split_line(split);
-	
-	for (x = 0; path[x] != NULL; x++)
+
+	while(path[x] != NULL)
 	{
-		split = _strcat(path[x], command);
-		if (_stat(split) == 0)
-			return (split);
+		aux = malloc(_strlen(path[x]) + size + 1);
+		if (aux == NULL)
+			return (0);
+
+		aux = strcpy(aux, path[x]);
+		aux = _strcat(aux, "/");
+		aux = _strcat(aux, command);
+		if (_stat(aux) == 0)
+		{
+			return (aux);
+		}
+		free(aux);
+		x++;
 	}
 	return (NULL);
 }
