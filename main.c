@@ -6,15 +6,23 @@ int main()
 {
 	char *line;
 	char **args;
+	int quit = 0;
 
-	while (1)
+	while (quit == 0)
 	{
 		printf("~$ ");
 		line = get_line();
 		args = split_line(line);
-		_fork(args);
-		free(line);
-		free(args);
+		if (strcmp(args[0], "exit") == 0)
+		{
+			quit = 1;
+		}
+		else
+		{
+			_fork(args);
+			free(line);
+			free(args);
+		}
 	}
 	return (0);
 }

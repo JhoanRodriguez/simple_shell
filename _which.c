@@ -19,8 +19,8 @@ char *_which(char *command)
 	command = _strdup("/");
 	_strcat(command, tmp);
 	split = _getenv("PATH");
-	path = split_line(split);	
-
+	path = split_line(split);
+	
 	for (x = 0; path[x] != NULL; x++)
 	{
 		split = _strcat(path[x], command);
