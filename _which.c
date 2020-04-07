@@ -24,7 +24,7 @@ char *_which(char *command)
 		if (aux == NULL)
 			return (0);
 
-		aux = strcpy(aux, path[x]);
+		aux = _strcpy(aux, path[x]);
 		aux = _strcat(aux, "/");
 		aux = _strcat(aux, command);
 		if (_stat(aux) == 0)
