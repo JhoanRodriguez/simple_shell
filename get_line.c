@@ -7,9 +7,7 @@ char *get_line()
 {
 	char *line = NULL;
 	size_t n = 0;
-	ssize_t nread;
 
-	nread = getline(&line, &n, stdin);
-	printf("Caracteres leidos: %zu\n\n", nread); //debug
+	getline(&line, &n, stdin);
 	return (line);
 }
