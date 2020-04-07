@@ -8,8 +8,7 @@
  {
 	 char **env;
 	 char *aux, *token;
-	 int size, size_aux;
-	 int i;
+	 int size, i;
 
 	 size = _strlen(name);
 
@@ -18,8 +17,6 @@
 	 for (; *env; ++env)
 	 {
 		 aux = *env;
-		 size_aux = _strlen(aux);
-
 		 token = strtok(aux, "=");
 		 if (token == NULL)
 			 return (NULL);

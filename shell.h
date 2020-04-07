@@ -18,4 +18,5 @@ int _stat(const char *path);
 char *_getenv(const char *name);
 char *_which(char *command);
 int _fork(char **args);
+int _execve(char *command, char **cmd);
 #endif

@@ -7,8 +7,7 @@ char *get_line()
 {
 	char *line = NULL;
 	size_t n = 0;
-	ssize_t nread;
 
-	nread = getline(&line, &n, stdin);
+	getline(&line, &n, stdin);
 	return (line);
 }

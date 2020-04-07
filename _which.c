@@ -9,9 +9,8 @@ char *_which(char *command)
 {
 	char **path;
 	char *split;
-	char *aux;
 	char *tmp;
-	int x = 0;
+	int x;
 
 	if (!command)
 		return (NULL);
@@ -20,17 +19,13 @@ char *_which(char *command)
 	command = _strdup("/");
 	_strcat(command, tmp);
 	split = _getenv("PATH");
-	path = split_line(split);
-	while (path[x] != NULL)
+	path = split_line(split);	
+
+	for (x = 0; path[x] != NULL; x++)
 	{
-		printf("Esto es path %s\n", path[x]);
-		printf("Esto es command %s\n",command);
 		split = _strcat(path[x], command);
-		printf("Esto es split en el while %s\n", split);
 		if (_stat(split) == 0)
 			return (split);
-
-		x++;
 	}
 	return (NULL);
 }
