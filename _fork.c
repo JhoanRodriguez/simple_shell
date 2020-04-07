@@ -18,7 +18,6 @@ int _fork(char **args)
 		args[0] = _which(args[0]);
 		if (args[0] != NULL)
 		{
-			printf("%s args\n", args[0]);
 			_execve(args[0],args);
 			exit(0);
 		}
