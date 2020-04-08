@@ -5,8 +5,8 @@
  */
 int main(void)
 {
-	char *line;
-	char **args;
+	char *line = NULL;
+	char **args = NULL;
 	int quit = 0;
 
 	while (quit == 0)

@@ -8,8 +8,8 @@ char **split_line(char *line)
 {
 	int buffer_size = 32;
 	int i;
-	char **tokens;
-	char *token;
+	char **tokens = NULL;
+	char *token = NULL;
 
 	tokens = malloc(sizeof(char *) * buffer_size);
 	if (tokens == NULL)

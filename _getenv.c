@@ -6,8 +6,8 @@
  */
 char *_getenv(const char *name)
 {
-	char **env;
-	char *aux, *token;
+	char **env = NULL;
+	char *aux = NULL, *token = NULL;
 	int size, i;
 
 	size = _strlen(name);

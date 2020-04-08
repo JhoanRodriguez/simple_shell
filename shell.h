@@ -13,6 +13,7 @@ int _strlen(const char *s);
 char *_strcat(char *dest, char *src);
 char *_strdup(char *duplicate);
 char *_strcpy(char *dest, char *src);
+void _free (char **);
 char *get_line();
 char **split_line(char *line);
 int _stat(const char *path);
