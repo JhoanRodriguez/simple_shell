@@ -1,8 +1,9 @@
 #include "shell.h"
 /**
  * main - one function to rule then all
+ * Return: 0 on success
  */
-int main()
+int main(void)
 {
 	char *line;
 	char **args;

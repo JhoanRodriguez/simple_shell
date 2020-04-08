@@ -1,9 +1,7 @@
 #include "shell.h"
 /**
  * _fork - creates a new process from the parent
- * @command: command pointer.
- * @cmd: path received.
- *
+ * @args: command args.
  * Return: 0 on sucess, 1 on failure.
  */
 int _fork(char **args)
@@ -18,11 +16,12 @@ int _fork(char **args)
 		args[0] = _which(args[0]);
 		if (args[0] != NULL)
 		{
-			_execve(args[0],args);
+			_execve(args[0], args);
+
 			exit(0);
 		}
 		perror("Error, command not found");
-		exit (-1);
+		exit(-1);
 	}
 	else if (index > 0)
 	{
@@ -30,7 +29,7 @@ int _fork(char **args)
 		if (pid < 0)
 		{
 			perror("Error");
-			exit (-1);
+			exit(-1);
 		}
 		wait(NULL);
 	}
