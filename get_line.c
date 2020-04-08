@@ -10,7 +10,7 @@ char *get_line()
 	size_t n = 0;
 
 	if (getline(&line, &n, stdin) == EOF)
-		exit (0);
+		exit(0);
 
 	return (line);
 }
