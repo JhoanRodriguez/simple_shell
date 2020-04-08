@@ -9,6 +9,8 @@ char *get_line()
 	char *line = NULL;
 	size_t n = 0;
 
-	getline(&line, &n, stdin);
+	if (getline(&line, &n, stdin) == EOF)
+		exit (0);
+
 	return (line);
 }
