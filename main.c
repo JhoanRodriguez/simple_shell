@@ -14,7 +14,7 @@ int main(void)
 		printf("~$ ");
 		line = get_line();
 		args = split_line(line);
-		if (strcmp(args[0], "exit") == 0)
+		if (_strcmp(args[0], "exit") == 0)
 			quit = 1;
 		else
 			_fork(args);
