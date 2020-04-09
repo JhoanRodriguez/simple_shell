@@ -1,0 +1,33 @@
+.TH HSH 1 "Simple Shell man page"
+.SH NAME
+.B hsh
+- UNIX command interpreter (shell)
+.SH SYNOPSIS
+.B ./hsh
+.SH DESCRIPTION
+This program recreate the basic functions of shell, reads lines from the prompt, interprets them, and generally executes other commands.
+.SH EXAMPLE
+interactive mode:
+.Pp
+.nf
+.RS
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+
+$ ./hsh
+
+~$ ls
+
+~$ hsh main.c shell.c
+
+~$
+
+~$ exit
+
+$
+.RE
+.fi
+.Pp
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Jhoan Rodriguez, Kevin Arevalo
