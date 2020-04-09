@@ -1,7 +1,8 @@
 #include "shell.h"
+
 /**
- *
- *
+ * _free - free allocated memory
+ * @args: argument to free
  */
 void _free(char **args)
 {
