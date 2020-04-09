@@ -1,8 +1,8 @@
-#Simple Shell
+# Simple Shell
 
 UNIX command interpreter
 
-##Description
+## Description
 
 A simple shell that return output accoding to the user input
 
@@ -17,7 +17,12 @@ $ ./hsh
 ~$ ls
 ~$ hsh main.c shell.c
 ~$
-~$exit
+~$ exit
 $
 ```
+## Files
+
+|   **File**   |   **Description**   |
+| -------------- | --------------------- |
+| [main.c](./main.c) | the main function |
 
