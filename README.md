@@ -20,6 +20,19 @@ $ ./hsh
 ~$ exit
 $
 ```
+```
+$ echo "/bin/ls" | ./hsh
+hsh main.c shell.c test_ls_2
+$
+$ cat test_ls_2
+/bin/ls
+/bin/ls
+$
+$ cat test_ls_2 | ./hsh
+hsh main.c shell.c test_ls_2
+hsh main.c shell.c test_ls_2
+$
+```
 ## Files
 
 |   **File**   |   **Description**   |
@@ -36,3 +49,7 @@ $
 | [_getenv.c](./_getenv.c) | gets env from input |
 | [_free.c](./_free.c) | free allocated memory |
 
+## Authors
+
+* [**Jhoan Rodriguez**](https://github.com/JhoanRodriguez)
+* [**Kevin Arevalo**](https://github.com/Kev0417)
