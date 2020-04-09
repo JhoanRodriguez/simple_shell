@@ -10,7 +10,7 @@ A simple shell that return output accoding to the user input
 
 * Compiling the program: `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
 
-* Example:
+* Example interactive mode:
 ```
 $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 $ ./hsh
@@ -20,7 +20,9 @@ $ ./hsh
 ~$ exit
 $
 ```
+* Example non-interactive mode:
 ```
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 $ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
 $
