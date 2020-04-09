@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  * _stat - stat of a file.
- * @filename: filename to verify status.
+ * @path: filename to verify status.
  * Return: 1 on sucess, 0 on failure.
  */
 int _stat(const char *path)

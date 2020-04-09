@@ -9,7 +9,7 @@
 int _execve(char *command, char **cmd)
 {
 
-	if (execve(command, cmd, NULL) == -1)
+	if (execve(command, cmd, environ) == -1)
 	{
 		perror("Error in execve");
 	}

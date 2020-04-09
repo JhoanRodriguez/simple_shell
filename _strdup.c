@@ -6,7 +6,7 @@
  */
 char *_strdup(char *duplicate)
 {
-	char *copy;
+	char *copy = NULL;
 	int len, i;
 
 	if (duplicate == 0)
