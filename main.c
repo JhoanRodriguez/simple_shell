@@ -12,7 +12,7 @@ int main(void)
 
 	while (quit == 0)
 	{
-		printf("~$ ");
+		_printf("~$ ");
 		line = get_line();
 		if (line[0] != 10)
 		{

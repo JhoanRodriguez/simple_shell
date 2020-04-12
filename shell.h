@@ -15,6 +15,7 @@ char *_strdup(char *duplicate);
 char *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 int _strncmp(char *s1, const char *s2, int until);
+void _printf (char *s);
 void _free(char **);
 char *get_line();
 char **split_line(char *line);
