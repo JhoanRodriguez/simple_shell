@@ -13,7 +13,7 @@ char *_getenv(const char *name)
 	env = environ;
 	for (i = 0; env[i] != NULL; i++)
 	{
-		if (_strncmp(env[i], name, 4)==0)
+		if (_strncmp(env[i], name, 4) == 0)
 		{
 			p = env[i];
 			return (p);

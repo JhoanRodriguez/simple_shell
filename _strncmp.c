@@ -7,7 +7,7 @@
  * Return: negative int if s1 < s2, 0 if matching, and positive int if s1 > s2
  */
 
-int _strncmp(char *s1,const char *s2, int until)
+int _strncmp(char *s1, const char *s2, int until)
 {
 	int x = 0;
 
