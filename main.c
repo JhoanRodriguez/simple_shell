@@ -14,14 +14,16 @@ int main(void)
 	{
 		printf("~$ ");
 		line = get_line();
-		args = split_line(line);
-		if (_strcmp(args[0], "exit") == 0)
-			quit = 1;
-		else
-			_fork(args);
-
-		free(line);
-		free(args);
+		if (line[0] != 10)
+		{
+			args = split_line(line);
+			if (_strcmp(args[0], "exit") == 0)
+				quit = 1;
+			else
+				_fork(args);
+			free(line);
+			free(args);
+		}
 	}
 	return (0);
 }

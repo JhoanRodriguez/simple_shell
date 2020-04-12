@@ -6,30 +6,17 @@
  */
 char *_getenv(const char *name)
 {
-	char **env = NULL;
-	char *aux = NULL, *token = NULL;
-	int size, i;
-
-	size = _strlen(name);
+	char **env;
+	size_t  i;
+	char *p;
 
 	env = environ;
-
-	for (; *env; ++env)
+	for (i = 0; env[i] != NULL; i++)
 	{
-		aux = *env;
-		token = strtok(aux, "=");
-		if (token == NULL)
-			return (NULL);
-
-		if (_strlen(token) != size)
-			continue;
-
-		for (i = 0; i < size; i++)
+		if (_strncmp(env[i], name, 4)==0)
 		{
-			if (name[i] != aux[i])
-				break;
-			else if (name[i] == aux[i] && i < size)
-				return (strtok(NULL, "="));
+			p = env[i];
+			return (p);
 		}
 	}
 	return (NULL);
