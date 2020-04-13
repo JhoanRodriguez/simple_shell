@@ -8,7 +8,7 @@ int _stat(const char *path)
 {
 	struct stat st;
 
-	if (stat(path, &st) == 0)
+	if (stat(path, &st) == 0 && (st.st_mode & S_IXUSR))
 		return (0);
 
 	return (-1);
