@@ -11,7 +11,6 @@ char *get_line()
 
 	if (getline(&line, &n, stdin) == EOF)
 	{
-		_printf("\n");
 		free(line);
 		exit(0);
 	}
