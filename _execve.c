@@ -6,10 +6,10 @@
  *
  * Return: Always 0.
  */
-int _execve(char *command, char **cmd)
+int _execve(char *command, char **cmd, char **env)
 {
 
-	if (execve(command, cmd, environ) == -1)
+	if (execve(command, cmd, env) == -1)
 	{
 		perror("Error in execve");
 	}

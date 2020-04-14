@@ -4,7 +4,7 @@
  * @args: command args.
  * Return: 0 on sucess, 1 on failure.
  */
-int _fork(char **args)
+int _fork(char **args, char **env)
 {
 	pid_t index, pid;
 	int status;
@@ -13,9 +13,9 @@ int _fork(char **args)
 
 	if (index  == 0)
 	{
-		args[0] = _which(args[0]);
+		args[0] = _which(args[0], env);
 		if (args[0] != NULL)
-			_execve(args[0], args);
+			_execve(args[0], args, env);
 
 		_free(args);
 		free(args);

@@ -8,7 +8,6 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <errno.h>
-extern char **environ;
 int _strlen(const char *s);
 char *_strcat(char *dest, char *src);
 char *_strdup(char *duplicate);
@@ -20,8 +19,8 @@ void _free(char **);
 char *get_line();
 char **split_line(char *line);
 int _stat(const char *path);
-char *_getenv(const char *name);
-char *_which(char *command);
-int _fork(char **args);
-int _execve(char *command, char **cmd);
+char *_getenv(const char *name, char **env);
+char *_which(char *command, char **env);
+int _fork(char **args, char **env);
+int _execve(char *command, char **cmd, char **env);
 #endif

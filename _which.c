@@ -5,7 +5,7 @@
  *
  * Return: pointer string with found path or NULL in failure.
  */
-char *_which(char *command)
+char *_which(char *command, char **env)
 {
 	char *aux = NULL, **path = NULL, *split = NULL;
 	int size, x = 0;
@@ -15,7 +15,7 @@ char *_which(char *command)
 	if (!command)
 		return (NULL);
 
-	split = _getenv("PATH");
+	split = _getenv("PATH", env);
 	path = split_line(split);
 
 	while (path[x] != NULL)

@@ -4,7 +4,7 @@
  * main - one function to rule then all
  * Return: 0 on success
  */
-int main(void)
+int main(__attribute__((unused)) int argc, __attribute__((unused)) char **argv, char **env) 
 {
 	char *line = NULL;
 	char **args = NULL;
@@ -23,7 +23,7 @@ int main(void)
 			if (_strcmp(args[0], "exit") == 0)
 				quit = 1;
 			else
-				_fork(args);
+				_fork(args, env);
 
 			free(args);
 		}
