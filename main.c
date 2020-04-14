@@ -12,7 +12,9 @@ int main(void)
 
 	while (quit == 0)
 	{
-		_printf("~$ ");
+		if (isatty(STDIN_FILENO))
+			_printf("~$ ");
+
 		line = get_line();
 		if (line[0] != 10)
 		{

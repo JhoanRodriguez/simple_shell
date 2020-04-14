@@ -15,14 +15,20 @@ char *_which(char *command)
 	if (!command)
 		return (NULL);
 
-	if (_stat(command) == 0)
-		return (command);
-
 	split = _getenv("PATH");
 	path = split_line(split);
 
 	while (path[x] != NULL)
 	{
+		if (_strcmp(path[x], "PATH=") == 0)
+		{
+			if (_stat(command) == 0)
+			{
+				free(path);
+				return (command);
+			}
+		}	      
+
 		aux = malloc(_strlen(path[x]) + size + 1);
 		if (aux == NULL)
 		{
@@ -42,5 +48,8 @@ char *_which(char *command)
 		x++;
 	}
 	free(path);
+	if (_stat(command) == 0)
+		return (command);
+
 	return (NULL);
 }
