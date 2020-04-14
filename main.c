@@ -13,7 +13,7 @@ int main(void)
 	while (quit == 0)
 	{
 		if (isatty(STDIN_FILENO))
-			_printf("$ ");
+			_printf("~$ ");
 
 		line = get_line();
 
