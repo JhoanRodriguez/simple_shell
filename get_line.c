@@ -6,11 +6,15 @@
  */
 char *get_line()
 {
-	char *line = NULL;
+	char *line = NULL, *aux = NULL;
 	size_t n = 0;
 
 	if (getline(&line, &n, stdin) == EOF)
+	{
+		free(line);
 		exit(0);
-
-	return (line);
+	}
+	aux = _strdup(line);
+	free(line);
+	return (aux);
 }

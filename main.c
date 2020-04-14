@@ -16,6 +16,7 @@ int main(void)
 			_printf("~$ ");
 
 		line = get_line();
+
 		if (line[0] != 10)
 		{
 			args = split_line(line);
@@ -23,9 +24,10 @@ int main(void)
 				quit = 1;
 			else
 				_fork(args);
-			free(line);
+
 			free(args);
 		}
+		free(line);
 	}
 	return (0);
 }

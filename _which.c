@@ -33,7 +33,7 @@ char *_which(char *command)
 		if (aux == NULL)
 		{
 			free(path);
-			return (0);
+			return (aux);
 		}
 
 		aux = _strcpy(aux, path[x]);
