@@ -27,7 +27,7 @@ char *_which(char *command)
 				free(path);
 				return (command);
 			}
-		}	      
+		}
 
 		aux = malloc(_strlen(path[x]) + size + 1);
 		if (aux == NULL)

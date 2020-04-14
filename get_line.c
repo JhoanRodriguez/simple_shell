@@ -12,6 +12,7 @@ char *get_line()
 	if (getline(&line, &n, stdin) == EOF)
 	{
 		free(line);
+		_printf("\n");
 		exit(0);
 	}
 	aux = _strdup(line);
