@@ -11,37 +11,29 @@ char *_which(char *command)
 	int size, x = 0;
 
 	size = _strlen(command);
-
 	if (!command)
 		return (NULL);
-
 	split = _getenv("PATH");
 	path = split_line(split);
-
 	while (path[x] != NULL)
 	{
 		if (_strcmp(path[x], "PATH=") == 0)
 		{
 			if (_stat(command) == 0)
-			{
-				free(path);
+			{				free(path);
 				return (command);
 			}
 		}
-
 		aux = malloc(_strlen(path[x]) + size + 1);
 		if (aux == NULL)
-		{
-			free(path);
+		{			free(path);
 			return (aux);
 		}
-
 		aux = _strcpy(aux, path[x]);
 		aux = strcat(aux, "/");
 		aux = strcat(aux, command);
 		if (_stat(aux) == 0)
-		{
-			free(path);
+		{			free(path);
 			return (aux);
 		}
 		free(aux);
@@ -50,6 +42,5 @@ char *_which(char *command)
 	free(path);
 	if (_stat(command) == 0)
 		return (command);
-
 	return (NULL);
 }
