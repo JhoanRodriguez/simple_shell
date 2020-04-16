@@ -20,7 +20,7 @@ int _fork(char **args, char **env)
 
 		_free(args);
 		perror("Error, command not found");
-		exit(-1);
+		exit(2);
 	}
 	else if (index > 0)
 	{
