@@ -23,4 +23,5 @@ char *_getenv(const char *name, char **env);
 char *_which(char *command, char **env);
 int _fork(char **args, char **env);
 int _execve(char *command, char **cmd, char **env);
+void *_realloc(void *ptr, size_t old_size, size_t new_size);
 #endif

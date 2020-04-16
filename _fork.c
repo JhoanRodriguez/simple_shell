@@ -19,6 +19,8 @@ int _fork(char **args, char **env)
 
 		_free(args);
 		free(args);
+		printf("%d\n", errno);
+		printf("%s\n", args[0]);
 		perror("Error, command not found");
 		exit(-1);
 	}
