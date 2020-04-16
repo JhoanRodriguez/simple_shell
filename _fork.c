@@ -19,7 +19,6 @@ int _fork(char **args, char **env)
 			_execve(args[0], args, env);
 
 		_free(args);
-		free(args);
 		perror("Error, command not found");
 		exit(-1);
 	}
