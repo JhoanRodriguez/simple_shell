@@ -2,6 +2,7 @@
 /**
  * _which - Find the directory needed
  * @command: Command received
+ * @env: env variables
  *
  * Return: pointer string with found path or NULL in failure.
  */

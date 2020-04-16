@@ -2,6 +2,7 @@
 /**
  * _getenv - looks for the path
  * @name: variable to be look
+ * @env: env variables
  * Return: a pointer to a string
  */
 char *_getenv(const char *name, char **env)

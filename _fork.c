@@ -2,6 +2,7 @@
 /**
  * _fork - creates a new process from the parent
  * @args: command args.
+ * @env: env variables.
  * Return: 0 on sucess, 1 on failure.
  */
 int _fork(char **args, char **env)
@@ -19,8 +20,6 @@ int _fork(char **args, char **env)
 
 		_free(args);
 		free(args);
-		printf("%d\n", errno);
-		printf("%s\n", args[0]);
 		perror("Error, command not found");
 		exit(-1);
 	}

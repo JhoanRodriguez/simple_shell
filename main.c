@@ -2,9 +2,13 @@
 
 /**
  * main - one function to rule then all
+ * @argc: number of args
+ * @argv: arguments
+ * @env: env variables
  * Return: 0 on success
  */
-int main(__attribute__((unused)) int argc, __attribute__((unused)) char **argv, char **env) 
+int main(__attribute__((unused))int argc,
+		__attribute__((unused))char **argv, char **env)
 {
 	char *line = NULL;
 	char **args = NULL;
